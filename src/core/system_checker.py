@@ -1,5 +1,6 @@
 import platform
 import subprocess
+from src.exceptions import WSLCommandError
 
 
 class SystemChecker:
@@ -31,7 +32,7 @@ class SystemChecker:
             if "2" not in output:
                 raise EnvironmentError("O WSL2 não está instalado ou não está rodando neste sistema.")
         except subprocess.CalledProcessError:
-            return False
+            raise WSLCommandError("Ocorreu um erro ao tentar executar o comando WSL.")
 
     @staticmethod
     def check_requirements():
