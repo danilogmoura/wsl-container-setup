@@ -1,3 +1,4 @@
-from .wsl_command_error import WSLCommandError
+from .wsl_command_exception import WSLCommandException
+from .download_exception import DownloadException
 
-__all__ = ['WSLCommandError']
+__all__ = ['WSLCommandException', 'DownloadException']
